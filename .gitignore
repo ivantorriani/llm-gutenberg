@@ -1,3 +1,4 @@
 gutenberg/
 llm/notebooks/
 .venv/
+gutenberg_preprocessed/
