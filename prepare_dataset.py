@@ -1,10 +1,8 @@
-# Copyright (c) Sebastian Raschka under Apache License 2.0 (see LICENSE.txt).
-# Source for "Build a Large Language Model From Scratch"
-#   - https://www.manning.com/books/build-a-large-language-model-from-scratch
-# Code: https://github.com/rasbt/LLMs-from-scratch
 
 """
 Script that processes the Project Gutenberg files into fewer larger files.
+note: python prepare_dataset.py --data_dir gutenberg/data/raw --max_size_mb 500 --output_dir gutenberg_preprocessed
+note: if dependencies aren't working even with pip, create enviornment on anaconda and select interpreter. 
 """
 
 import argparse
@@ -68,7 +66,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Preprocess and combine text files for pretraining")
 
-    parser.add_argument("--data_dir", type=str, default="gutenberg/data/raw",
+    parser.add_argument("--data_dir", type=str, default="gutenberg/data/.mirror",
                         help="Directory containing the downloaded raw training data")
     parser.add_argument("--max_size_mb", type=int, default=500,
                         help="The maximum file size for each concatenated file in megabytes")

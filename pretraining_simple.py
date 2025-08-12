@@ -20,7 +20,8 @@ from llm.src.Architecture.Model import GPTModel
 from llm.src.Analysis.cross_entropy import calc_loss_batch
 from llm.src.Train.evaluate_model import evaluate_model
 from llm.src.Analysis.loss_vs_tokens import plot_losses
-#evaluate_model, plot_losses, generate_and_print_sample
+from llm.src.Train.generate_and_print_sample import generate_and_print_sample
+
 
 
 def read_text_file(file_path):
