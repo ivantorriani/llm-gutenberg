@@ -1,7 +1,3 @@
-# Copyright (c) Sebastian Raschka under Apache License 2.0 (see LICENSE.txt).
-# Source for "Build a Large Language Model From Scratch"
-#   - https://www.manning.com/books/build-a-large-language-model-from-scratch
-# Code: https://github.com/rasbt/LLMs-from-scratch
 
 """
 Script for pretraining a small GPT-2 124M parameter model
@@ -18,11 +14,13 @@ import time
 import tiktoken
 import torch
 
-# For llms_from_scratch installation instructions, see:
-# https://github.com/rasbt/LLMs-from-scratch/tree/main/pkg
-from llms_from_scratch.ch02 import create_dataloader_v1
-from llms_from_scratch.ch04 import GPTModel
-from llms_from_scratch.ch05 import calc_loss_batch, evaluate_model, plot_losses, generate_and_print_sample
+
+from llm.src.Dataset.create_dataloader_v1 import create_dataloader_v1
+from llm.src.Architecture.Model import GPTModel
+from llm.src.Analysis.cross_entropy import calc_loss_batch
+from llm.src.Train.evaluate_model import evaluate_model
+from llm.src.Analysis.loss_vs_tokens import plot_losses
+#evaluate_model, plot_losses, generate_and_print_sample
 
 
 def read_text_file(file_path):
